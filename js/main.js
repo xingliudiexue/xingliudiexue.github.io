@@ -808,3 +808,16 @@ $(function () {
   refreshFn()
   unRefreshFn()
 })
+
+new Valine({
+  el: '#vcomments',
+  appId: '',
+  appKey: '',
+  master: '208501c4486b522ec8aefde5035cfbf5',   //博主邮箱md5
+  tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+  friends:  ["",""],  //小伙伴邮箱Md5
+  metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱"},
+  placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+  avatar: 'wavatar',
+  enableQQ: true,
+})
