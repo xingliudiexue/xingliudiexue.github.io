@@ -95,7 +95,7 @@ $(function () {
  * 手機menu和toc按鈕點擊
  * 顯示menu和toc的sidebar
  */
-
+   
   const sidebarFn = () => {
     const $toggleMenu = $('#toggle-menu')
     const $mobileSidebarMenus = $('#mobile-sidebar-menus')
@@ -811,8 +811,11 @@ $(function () {
 
 new Valine({
   el: '#vcomments',
-  appId: '',
-  appKey: '',
+  appId: "<%= theme.valine.appId %>",
+  appKey: "<%= theme.valine.appKey %>",
+  path: window.location.pathname,
+  notify: true,
+  verify: true,
   master: '208501c4486b522ec8aefde5035cfbf5',   //博主邮箱md5
   tagMeta: ["博主","小伙伴","访客"],     //标识字段名
   friends:  ["",""],  //小伙伴邮箱Md5
