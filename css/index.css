@@ -1468,7 +1468,7 @@ canvas:not(#ribbon-canvas),
   --tab-button-active-bg: #fff;
   --card-bg: #fff;
   --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #ff7242;
+  --btn-hover-color: #fca4d4;
   --btn-color: #fff;
   --btn-bg: #49b1f5;
   --text-bg-hover: #49b1f5;
@@ -1512,7 +1512,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: #FFECFF;
+  background: #FEE2E2;
   background-attachment: local;
   background-position: center;
   -webkit-background-size: cover;
@@ -2005,7 +2005,7 @@ blockquote footer cite:before {
   font-size: 1.72em;
 }
 .article-sort-title:hover:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 .article-sort-title:before {
   position: absolute;
@@ -2057,7 +2057,7 @@ blockquote footer cite:before {
   transition: all 0.2s ease-in-out;
 }
 .article-sort-item:hover:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 .article-sort-item:before {
   position: absolute;
@@ -2087,7 +2087,7 @@ blockquote footer cite:before {
   border-color: #49b1f5;
 }
 .article-sort-item.year:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 .article-sort-item-time {
   color: #858585;
@@ -2211,7 +2211,7 @@ blockquote footer cite:before {
   content: '';
 }
 #page .category-lists ul li:hover:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 .layout_page {
   display: -webkit-box;
@@ -2495,7 +2495,7 @@ blockquote footer cite:before {
   cursor: default;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .sticky {
-  color: #ff7242;
+  color: #fca4d4;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap i {
   margin: 0 0.2rem 0 0;
@@ -2946,7 +2946,7 @@ blockquote footer cite:before {
   color: #49b1f5;
 }
 #post-comment .comment-head .comment-switch .second-comment {
-  color: #ff7242;
+  color: #fca4d4;
 }
 #post-comment .comment-head .comment-switch label {
   position: relative;
@@ -2964,7 +2964,7 @@ blockquote footer cite:before {
   filter: alpha(opacity=0);
 }
 #post-comment .comment-head .comment-switch label input#switch-comments-btn:checked + .slider {
-  background-color: #ff7242;
+  background-color: #fca4d4;
 }
 #post-comment .comment-head .comment-switch label input#switch-comments-btn:checked + .slider:before {
   -webkit-transform: translateX(20px);
@@ -4293,7 +4293,7 @@ _:future,
   padding: 0.2em 0.2em 0.2em 1.4em;
 }
 #article-container.post-content ul > li:not(.tab):hover:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 #article-container.post-content ul > li:not(.tab):before {
   top: 0.78em;
@@ -4346,9 +4346,8 @@ img {
   margin: 0 auto;
   padding: 2rem 15px;
   max-width: 1000px;
-  opacity: 0.9 /*文章页文章背景透明度*/;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" /*文章页文章背景透明度*/;
-  filter: alpha(opacity=90) /*文章页文章背景透明度*/;
+/**filter: blur(8px)*/
+/**opacity:0.6 /*文章页文章背景透明度*/
 }
 .layout_post img {
   display: block;
@@ -6173,7 +6172,7 @@ blockquote.pullquote.right {
   line-height: 1.7;
 }
 #local-search .local-search__hit-item:hover:before {
-  border-color: #ff7242;
+  border-color: #fca4d4;
 }
 #local-search .local-search__hit-item:before {
   position: absolute;
