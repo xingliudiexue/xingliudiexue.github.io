@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>butterfly主题个性化修改（hexo博客）笔记</title>
+      <link href="202011-2df0dcf06c55/"/>
+      <url>202011-2df0dcf06c55/</url>
+      
+        <content type="html"><![CDATA[<div class="note info simple"><p>基于butterfly主题3.2.0版本，其他版本会有所差异，本个性化修改备忘录为从安装hexo开始。</p></div><h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h1><ol><li><p>安装<a href="https://nodejs.org/en/">node.js</a> 和 <a href="https://git-scm.com/">Git</a> ，参考<a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a>。</p></li><li><p>更换成国内阿里系<a href="https://developer.aliyun.com/mirror/NPM">淘宝npm源</a>，加快模块安装速度：<br>在将要安放博客文件的目录里打开Git Bash并继续：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>查看镜像源配置信息：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm info underscore</span><br></pre></td></tr></table></figure></li><li><p>安装hexo:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>查看hexo版本：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li><li><p>初始化博客根文件夹（将生成一个名为“blogName”的文件夹作为工作目录并初始化生成hexo博客文件）：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blogName</span><br></pre></td></tr></table></figure><p>进入blogName文件夹：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blogName</span><br></pre></td></tr></table></figure></li><li><p>安装butterfly主题：</p><div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#-1">手动下载</button></li><li class="tab"><button type="button" data-href="#-2">Git安装</button></li><li class="tab"><button type="button" data-href="#-3">npm安装</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="-1"><p>打开<a href="https://github.com/jerryc127/hexo-theme-butterfly/releases/tag/3.3.0">butterfly主题链接</a>并下载source Code(zip)到本地并解压放入 blogName\themes\butterfly\路径下，最终文件放置样式跟blogName\themes\landscape里差不多。</p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="-2"><p>Github:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git themes&#x2F;butterfly</span><br></pre></td></tr></table></figure><p>Gitee:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https:&#x2F;&#x2F;gitee.com&#x2F;iamjerryw&#x2F;hexo-theme-butterfly.git themes&#x2F;butterfly</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="-3"><blockquote><p>适合hexo5.0.0以上版本</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-butterfly</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div></li><li><p>应用主题：<br>修改站点配置文件_config.yml，把主题改为butterfly</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure></li><li><p>个性化修改前安装插件：<br>安装pug 以及 stylus 渲染器插件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><p>安装将要用到的插件插件：</p></li></ol><ul><li>字数统计插件: hexo-wordcount</li><li>本地搜索插件： hexo-generator-search</li><li>注脚插件： hexo-reference</li><li>部署插件(必要)： hexo-deployer-git</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount hexo-wordcount hexo-generator-search hexo-reference hexo-deployer-git --save</span><br></pre></td></tr></table></figure><blockquote><p><strong>升级建议：</strong><br>把主题文件夹中的 _config.yml 复製到 Hexo 根目录里，同时重新命名为 _config.butterfly.yml。<br>以后只需要在 _config.butterfly.yml进行配置就行。<br>Hexo会自动合併主题中的_config.yml和 _config.butterfly.yml里的配置，如果存在同名配置，会使用_config.butterfly.yml的配置，其优先度较高。<br><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-custom-modify/01.png"></p></blockquote><h1 id="2-个性化修改"><a href="#2-个性化修改" class="headerlink" title="2.个性化修改"></a>2.个性化修改</h1><h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><div class="note danger simple"><p>待续</p></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> note </tag>
+            
+            <tag> buterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>抗体（Antibody,Ab）</title>
       <link href="202011-60b9bcec7b99/"/>
       <url>202011-60b9bcec7b99/</url>
