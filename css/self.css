@@ -1,14 +1,16 @@
 /*鼠标指针*/
 body {
-    cursor: url(/cursor/default.cur),
-        default;
+	cursor: url(/cursor/default.cur),
+		default;
 }
+
 a,
 img {
-    cursor: url(/cursor/pointer.cur),
-        default;
+	cursor: url(/cursor/pointer.cur),
+		default;
 }
-/* valine评论背景*/
+
+/* valine评论输入框背景*/
 #veditor {
 	background-image: url(/img/diysay-valine.webp);
 	background-size: contain;
@@ -18,55 +20,85 @@ img {
 	resize: vertical
 }
 
-#veditor:focus{
+#veditor:focus {
 	background-position-y: 200px;
 	transition: all 0.2s ease-in-out 0s;
 }
+/*评论输入框*/
+.vwrap {
+	background-color: rgba(243, 250, 248, 0.438);
+	padding: 15px 20px 0 20px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+	transition: all .3s
+}
+.vwrap:hover {
+	box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+/*评论卡片式背景*/
+.vcard {
+	background-color: rgba(250, 243, 248, 0.438);
+	padding: 15px 20px 0 20px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+	transition: all .3s
+}
+
+.vcard:hover {
+	box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+.vquote .vcard {
+	background-color: rgba(245, 253, 255, 0.596);
+}
+
+.vcard .vh .vcard {
+	border: none;
+	box-shadow: none;
+}
+
+/*隐藏markdown按钮*/
+.vcol.vcol-30 {
+	visibility: hidden;
+}
+/*隐藏valine按钮*/
+.vpower.txt-right {
+	visibility: hidden;
+}
+
 
 /* 右滚动条 */
 ::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
 	background-color: rgba(73, 177, 245, 0.2);
 	border-radius: 2em;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
 	background-color: #49b1f5;
-	background-image: -webkit-linear-gradient(
-	  45deg,
-	  rgba(255, 255, 255, 0.4) 25%,
-	  transparent 25%,
-	  transparent 50%,
-	  rgba(255, 255, 255, 0.4) 50%,
-	  rgba(255, 255, 255, 0.4) 75%,
-	  transparent 75%,
-	  transparent
-	);
+	background-image: -webkit-linear-gradient(45deg,
+			rgba(255, 255, 255, 0.4) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.4) 50%,
+			rgba(255, 255, 255, 0.4) 75%,
+			transparent 75%,
+			transparent);
 	border-radius: 2em;
-  }
-  
-  ::-webkit-scrollbar-corner {
+}
+
+::-webkit-scrollbar-corner {
 	background-color: transparent;
-  }
-  
-  ::-moz-selection {
+}
+
+::-moz-selection {
 	color: #fff;
 	background-color: #49b1f5;
-  }
-
-article#post {
-	/*background-color: rgba(255,255,255,.6);*/
-	/*backdrop-filter: saturate(180%) blur(20px);*/
-	
-	backdrop-filter: blur(5px);
-  }
-
-/*div#body-wrap {
-	background-image: url(/img/custom/MagicGirlPuella.webp);
-	height: 100%;
-	width: 100%;
 }
