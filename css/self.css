@@ -10,6 +10,7 @@ img {
 		default;
 }
 
+
 /* valine评论输入框背景*/
 #veditor {
 	background-image: url(/img/diysay-valine.webp);
@@ -102,3 +103,4 @@ img {
 	color: #fff;
 	background-color: #49b1f5;
 }
+

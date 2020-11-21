@@ -1,245 +1,163 @@
+
+/* Copyright (C) 2013 Justin Windle sketch.min.js, http://soulwire.co.uk  鼠标点击效果*/
+var Sketch=function(){"use strict";function e(e){return"[object Array]"==Object.prototype.toString.call(e)}function t(e){return"function"==typeof e}function n(e){return"number"==typeof e}function o(e){return"string"==typeof e}function r(e){return E[e]||String.fromCharCode(e)}function i(e,t,n){for(var o in t)(n||!e.hasOwnProperty(o))&&(e[o]=t[o]);return e}function u(e,t){return function(){e.apply(t,arguments)}}function a(e){var n={};for(var o in e)n[o]=t(e[o])?u(e[o],e):e[o];return n}function c(e){function n(n){t(n)&&n.apply(e,[].splice.call(arguments,1))}function u(e){for(_=0;_<J.length;_++)G=J[_],o(G)?O[(e?"add":"remove")+"EventListener"].call(O,G,k,!1):t(G)?k=G:O=G}function c(){L(T),T=I(c),U||(n(e.setup),U=t(e.setup),n(e.resize)),e.running&&!j&&(e.dt=(B=+new Date)-e.now,e.millis+=e.dt,e.now=B,n(e.update),e.autoclear&&K&&e.clear(),n(e.draw)),j=++j%e.interval}function l(){O=Y?e.style:e.canvas,D=Y?"px":"",e.fullscreen&&(e.height=w.innerHeight,e.width=w.innerWidth),O.height=e.height+D,O.width=e.width+D,e.retina&&K&&X&&(O.height=e.height*X,O.width=e.width*X,O.style.height=e.height+"px",O.style.width=e.width+"px",e.scale(X,X)),U&&n(e.resize)}function s(e,t){return N=t.getBoundingClientRect(),e.x=e.pageX-N.left-w.scrollX,e.y=e.pageY-N.top-w.scrollY,e}function f(t,n){return s(t,e.element),n=n||{},n.ox=n.x||t.x,n.oy=n.y||t.y,n.x=t.x,n.y=t.y,n.dx=n.x-n.ox,n.dy=n.y-n.oy,n}function g(e){if(e.preventDefault(),W=a(e),W.originalEvent=e,W.touches)for(M.length=W.touches.length,_=0;_<W.touches.length;_++)M[_]=f(W.touches[_],M[_]);else M.length=0,M[0]=f(W,V);return i(V,M[0],!0),W}function h(t){for(t=g(t),q=(Q=J.indexOf(z=t.type))-1,e.dragging=/down|start/.test(z)?!0:/up|end/.test(z)?!1:e.dragging;q;)o(J[q])?n(e[J[q--]],t):o(J[Q])?n(e[J[Q++]],t):q=0}function p(t){F=t.keyCode,H="keyup"==t.type,Z[F]=Z[r(F)]=!H,n(e[t.type],t)}function v(t){e.autopause&&("blur"==t.type?b:C)(),n(e[t.type],t)}function C(){e.now=+new Date,e.running=!0}function b(){e.running=!1}function P(){(e.running?b:C)()}function A(){K&&e.clearRect(0,0,e.width,e.height)}function S(){R=e.element.parentNode,_=x.indexOf(e),R&&R.removeChild(e.element),~_&&x.splice(_,1),u(!1),b()}var T,k,O,R,N,_,D,B,G,W,z,F,H,q,Q,j=0,M=[],U=!1,X=w.devicePixelRatio,Y=e.type==m,K=e.type==d,V={x:0,y:0,ox:0,oy:0,dx:0,dy:0},J=[e.element,h,"mousedown","touchstart",h,"mousemove","touchmove",h,"mouseup","touchend",h,"click",y,p,"keydown","keyup",w,v,"focus","blur",l,"resize"],Z={};for(F in E)Z[E[F]]=!1;return i(e,{touches:M,mouse:V,keys:Z,dragging:!1,running:!1,millis:0,now:0/0,dt:0/0,destroy:S,toggle:P,clear:A,start:C,stop:b}),x.push(e),e.autostart&&C(),u(!0),l(),c(),e}for(var l,s,f="E LN10 LN2 LOG2E LOG10E PI SQRT1_2 SQRT2 abs acos asin atan ceil cos exp floor log round sin sqrt tan atan2 pow max min".split(" "),g="__hasSketch",h=Math,d="canvas",p="webgl",m="dom",y=document,w=window,x=[],v={fullscreen:!0,autostart:!0,autoclear:!0,autopause:!0,container:y.body,interval:1,globals:!0,retina:!1,type:d},E={8:"BACKSPACE",9:"TAB",13:"ENTER",16:"SHIFT",27:"ESCAPE",32:"SPACE",37:"LEFT",38:"UP",39:"RIGHT",40:"DOWN"},C={CANVAS:d,WEB_GL:p,WEBGL:p,DOM:m,instances:x,install:function(t){if(!t[g]){for(var o=0;o<f.length;o++)t[f[o]]=h[f[o]];i(t,{TWO_PI:2*h.PI,HALF_PI:h.PI/2,QUATER_PI:h.PI/4,random:function(t,o){return e(t)?t[~~(h.random()*t.length)]:(n(o)||(o=t||1,t=0),t+h.random()*(o-t))},lerp:function(e,t,n){return e+n*(t-e)},map:function(e,t,n,o,r){return(e-t)/(n-t)*(r-o)+o}}),t[g]=!0}},create:function(e){return e=i(e||{},v),e.globals&&C.install(self),l=e.element=e.element||y.createElement(e.type===m?"div":"canvas"),s=e.context=e.context||function(){switch(e.type){case d:return l.getContext("2d",e);case p:return l.getContext("webgl",e)||l.getContext("experimental-webgl",e);case m:return l.canvas=l}}(),e.container.appendChild(l),C.augment(s,e)},augment:function(e,t){return t=i(t||{},v),t.element=e.canvas||e,t.element.className+=" sketch",i(e,t,!0),c(e)}},b=["ms","moz","webkit","o"],P=self,A=0,S="AnimationFrame",T="request"+S,k="cancel"+S,I=P[T],L=P[k],O=0;O<b.length&&!I;O++)I=P[b[O]+"Request"+S],L=P[b[O]+"Cancel"+T];return P[T]=I=I||function(e){var t=+new Date,n=h.max(0,16-(t-A)),o=setTimeout(function(){e(t+n)},n);return A=t+n,o},P[k]=L=L||function(e){clearTimeout(e)},C}();
+
+//---
+if(document.getElementById("clickCanvas")) {
+    function Particle(x, y, radius) {
+        this.init(x, y, radius);
+    }
+    Particle.prototype = {
+        init : function(x, y, radius) {
+            this.alive = true;
+            this.radius = radius || 10;
+            this.wander = 0.15;
+            this.theta = random(TWO_PI);
+            this.drag = 0.92;
+            this.color = '#ffeb3b';
+
+            this.x = x || 0.0;
+            this.y = y || 0.0;
+            this.vx = 0.0;
+            this.vy = 0.0;
+        },
+        move : function() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vx *= this.drag;
+            this.vy *= this.drag;
+            this.theta += random(-0.5, 0.5) * this.wander;
+            this.vx += sin(this.theta) * 0.1;
+            this.vy += cos(this.theta) * 0.1;
+            this.radius *= 0.96;
+            this.alive = this.radius > 0.5;
+        },
+        draw : function(ctx) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, TWO_PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    };
+    var MAX_PARTICLES = 50;
+    //圆点颜色库
+    var COLOURS = [ "#5ee4ff", "#f44033", "#ffeb3b", "#F38630", "#FA6900", "#f403e8", "#F9D423" ];
+    var particles = [];
+    var pool = [];
+    var clickparticle = Sketch.create({
+        container : document.getElementById('clickCanvas')
+    });
+    clickparticle.spawn = function(x, y) {
+        if (particles.length >= MAX_PARTICLES)
+            pool.push(particles.shift());
+        particle = pool.length ? pool.pop() : new Particle();
+        particle.init(x, y, random(5, 20));//圆点大小范围
+        particle.wander = random(0.5, 2.0);
+        particle.color = random(COLOURS);
+        particle.drag = random(0.9, 0.99);
+        theta = random(TWO_PI);
+        force = random(1, 5);
+        particle.vx = sin(theta) * force;
+        particle.vy = cos(theta) * force;
+        particles.push(particle);
+    };
+    clickparticle.update = function() {
+        var i, particle;
+        for (i = particles.length - 1; i >= 0; i--) {
+            particle = particles[i];
+            if (particle.alive)
+                particle.move();
+            else
+                pool.push(particles.splice(i, 1)[0]);
+        }
+    };
+    clickparticle.draw = function() {
+        clickparticle.globalCompositeOperation = 'lighter';
+        for ( var i = particles.length - 1; i >= 0; i--) {
+            particles[i].draw(clickparticle);
+        }
+    };
+    //按下时显示效果，mousedown 或者 click
+    document.addEventListener("click", function(e) {
+        var max, j;
+        //排除一些元素
+        "TEXTAREA" !== e.target.nodeName && "INPUT" !== e.target.nodeName && "A" !== e.target.nodeName && "I" !== e.target.nodeName && "IMG" !== e.target.nodeName 
+        && function() {
+            for (max = random(15, 20), j = 0; j < max; j++) 
+            clickparticle.spawn(e.clientX, e.clientY);
+        }();
+    });
+}  
+/* 泡泡效果*/
 /*
-function switchComment() {
-    const t = "切换为Gitalk" === $("#switch-comment").attr("title") ? "切换为Valine" : "切换为Gitalk",
-        i = $("#switch-comment>i");
-    "none" === $("#gitalk-container").css("display") ? $("#vcomment").slideUp("normal",
-        () => {
-            $("#gitalk-container").slideDown("normal",
-                () => {
-                    $("#switch-comment").attr("title", t),
-                        i.hasClass("fa-toggle-off") ? i.removeClass("fa-toggle-off").addClass("fa-toggle-on") : i.removeClass("fa-toggle-on").addClass("fa-toggle-off")
-                }
-            )
-        }) : $("#gitalk-container").slideUp("normal", () => {
-        $("#vcomment").slideDown("normal",
-            () => {
-                $("#switch-comment").attr("title", t),
-                    i.hasClass("fa-toggle-off") ? i.removeClass("fa-toggle-off").addClass("fa-toggle-on") : i.removeClass("fa-toggle-on").addClass("fa-toggle-off")
-            })
-    })
-}
-(
-    function () {
-        function t(t) {
-            var i = "--light_bg_color: rgb(255, 255, 255," + t + ");",
-                n = "--dark_bg_color: rgba(18,18,18," + t + ");";
-            e.setAttribute("style", i + n)
-        }
-        var
-            i = document.getElementById("web_bg"),
-            e = document.getElementById("content-inner"),
-            n = Cookies.get("opacity"),
-            s = Cookies.get("bg"),
-            a = Cookies.get("animation"),
-            o = Cookies.get("type");
-        s && (i.style.background = s,
-                i.setAttribute("data-type", o),
-                a && (i.style.animation = a)),
-            t(n);
-        for (var l = document.getElementById("mobile-sidebar-menus"),
-                r = l.getElementsByClassName("menus_item_child"),
-                h = l.getElementsByClassName("menus-expand"), c = 0; c < r.length; c++) r[c].style.display = "none",
-            h[c].className += " menus-closed"
-    }
-)(),
-function (t) {
-    "use strict";
+(function() {
+	var canvas, ctx, width, height, bubbles, animateHeader = true;
+	initHeader();
+	function initHeader() {
+		canvas = document.getElementById('header_canvas');
+		window_resize();
+		ctx = canvas.getContext('2d');
+		//建立泡泡
+		bubbles = [];
+		var num = width * 0.04;//气泡数量
+		for (var i = 0; i < num; i++) {
+			var c = new Bubble();
+			bubbles.push(c);
+		}
+		animate();
+	}
+	function animate() {
+		if (animateHeader) {
+			ctx.clearRect(0, 0, width, height);
+			for (var i in bubbles) {
+				bubbles[i].draw();
+			}
+		}
+		requestAnimationFrame(animate);
+	}
+	function window_resize() {
+		//canvas铺满窗口
+		//width = window.innerWidth;
+		//height = window.innerHeight;
 
-    function i() {
-        const i = t(".tabs");
-        if (0 === i.length) return;
-        let e = i.find(".nav-tabs .tab");
-        for (var n = 0; n < e.length; n++) {
-            let t = i.find(e[n].children[0]);
-            t.addClass(t.attr("href")),
-                t.removeAttr("href")
-        }
-        t(".tabs .nav-tabs").on("click", "a", i => {
-            i.preventDefault(), i.stopPropagation();
-            let e = t(i.target.parentElement.parentElement.parentElement);
-            return e.find(".nav-tabs .active").removeClass("active"),
-                e.find(i.target.parentElement).addClass("active"),
-                e.find(".tab-content .active").removeClass("active"),
-                e.find(t(i.target).attr("class")).addClass("active"), !1
-        })
-    }
-    t(function () {
-        i(),
-            t(".scroll-down").on("click", function () {
-                scrolltoElement(".l_body")
-            }),
-            setTimeout(function () {
-                t("#loading-bar-wrapper").fadeOut(500)
-            }, 300)
-    })
-}(jQuery),
-function () {
-    function t(t) {
-        this.wrap = t.wrap,
-            this.imgList = t.imgList,
-            this.imgNum = this.imgList.length,
-            this.width = t.width || $(this.wrap).width(),
-            this.height = t.height || $(this.wrap).height(),
-            this.isAuto = t.isAuto || !0,
-            this.moveTime = t.moveTime,
-            this.direction = t.direction || "right",
-            this.btnWidth = t.btnWidth,
-            this.btnHeight = t.btnHeight,
-            this.spanWidth = t.spanWidth,
-            this.spanHeight = t.spanHeight,
-            this.spanColor = t.spanColor,
-            this.activeSpanColor = t.activeSpanColor,
-            this.btnBackgroundColor = t.btnBackgroundColor,
-            this.spanRadius = t.spanRadius,
-            this.spanMargin = t.spanMargin,
-            this.flag = !1,
-            this.nowIndex = 0,
-            this.createDom(),
-            this.initStyle(),
-            this.bindEvent(),
-            !0 === this.isAuto && this.autoMove()
-    }
-    t.prototype.createDom = function () {
-            var t = $('<ul class="imgList"></ul>'),
-                i = $('<div class="spot"></div>');
-            this.imgList.forEach(function (e) {
-                var n = '<li><a  href=" ' + e.a + 'target="_blank" "><img src=" ' + e.img + ' "></a></li>';
-                t.append(n);
-                var s = "<span></span>";
-                i.append(s)
-            });
-            var e = $('<div class="left-btn"><i class="fas fa-angle-left"></i></div>'),
-                n = $('<div class="right-btn"><i class="fas fa-angle-right"></i></div>');
-            this.wrap.append(t).append(e).append(n).append(i)
-        },
-        t.prototype.initStyle = function () {
-            $("*",
-                    this.wrap).css({
-                    margin: 0,
-                    padding: 0,
-                    listStyle: "none"
-                }),
-                $(this.wrap).css({
-                    overflow: "hidden",
-                    position: "relative"
-                }),
-                $(".imgList", this.wrap).css({
-                    width: this.width,
-                    height: this.height,
-                    position: "relative"
-                }),
-                $(".imgList li", this.wrap).css({
-                    width: this.width,
-                    height: this.height,
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    display: "none"
-                }).eq(this.nowIndex).css({
-                    display: "block"
-                }),
-                $(".imgList li a, .imgList li a img",
-                    this.wrap).css({
-                    display: "inline-block",
-                    width: this.width,
-                    height: this.height
-                }),
-                $(".left-btn, .right-btn",
-                    this.wrap).css({
-                    width: this.btnWidth,
-                    height: this.btnHeight,
-                    backgroundColor: this.btnBackgroundColor,
-                    color: "#fff",
-                    textAlign: "center",
-                    lineHeight: this.btnHeight + "px",
-                    position: "absolute",
-                    top: "50%",
-                    marginTop: -this.btnHeight / 2,
-                    cursor: "pointer"
-                }),
-                $(".right-btn",
-                    this.wrap).css({
-                    right: 0
-                }),
-                $(".spot", this.wrap).css({
-                    height: this.spanHeight + 2 * this.spanMargin,
-                    position: "absolute",
-                    left: "50%",
-                    marginLeft: -this.imgNum * (this.spanWidth + 2 * this.spanMargin) / 2,
-                    bottom: 10
-                }),
-                $(".spot span", this.wrap).css({
-                    display: "inline-block",
-                    width: this.spanWidth,
-                    height: this.spanHeight,
-                    margin: this.spanMargin,
-                    backgroundColor: this.spanColor,
-                    borderRadius: this.spanRadius,
-                    cursor: "pointer"
-                }).eq(this.nowIndex).css({
-                    backgroundColor: this.activeSpanColor
-                })
-        }, t.prototype.bindEvent = function () {
-            var t = this;
-            $(".left-btn", this.wrap).click(function () {
-                    t.move("prev")
-                }),
-                $(".right-btn", this.wrap).click(function () {
-                    t.move("next")
-                }),
-                $(".spot span").click(function (i) {
-                    t.move($(this).index())
-                }),
-                $(this.wrap).mouseenter(function () {
-                    clearInterval(t.time)
-                })
-        },
-        t.prototype.move = function (t) {
-            if (this.flag) return !1;
-            switch (this.flag = !0, t) {
-                case "prev":
-                    0 === this.nowIndex ? this.nowIndex = this.imgNum - 1 : this.nowIndex--;
-                    break;
-                case "next":
-                    this.nowIndex === this.imgNum - 1 ? this.nowIndex = 0 : this.nowIndex++;
-                    break;
-                default:
-                    this.nowIndex = t
-            }
-            var i = this;
-            $(".imgList li", this.wrap).fadeOut().eq(this.nowIndex).fadeIn(function () {
-                    i.flag = !1
-                }),
-                $(".spot  span", this.wrap).css({
-                    backgroundColor: this.spanColor
-                }).eq(this.nowIndex % this.imgNum).css({
-                    backgroundColor: this.activeSpanColor
-                })
-        },
-        t.prototype.autoMove = function () {
-            var t = this;
-            this.time = setInterval(function () {
-                    "left" == this.direction ? $(".left-btn", this.wrap).trigger("click") : $(".right-btn", this.wrap).trigger("click")
-                },
-                t.moveTime
-            )
-        },
-        $.fn.extend({
-            slider: function (i) {
-                i.wrap = this, new t(i)
-            }
-        })
-}();
-var commentElement = document.getElementsByClassName("comment_headling")[0];
-null != commentElement && (commentElement.innerHTML += '<a id="switch-comment" href="javascript:void(0);" title="切换为Gitalk" target="_self"><i class="fa fas fa-toggle-off" aria-hidden="true"></i></a>',
-        document.getElementById("gitalk-container").style.display = "none"),
-    $("#switch-comment").click(function () {
-        return switchComment(), !1
-    }),
-    function () {
-        var t = document.getElementsByClassName("full_page");
-        t.length > 0 && (t[0].style.backgroundImage = 'url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg")')
-    }();
-    */
+        //如果需要铺满内容可以换下面这个
+        var panel = document.getElementById('thumbnail_canvas');
+		width=panel.offsetWidth;
+		height=panel.offsetHeight;
 
-   
+		canvas.width = width;
+		canvas.height = height;
+	}
+    window.onresize = function(){
+        window_resize();
+    }
+	function Bubble() {
+		var _this = this;
+		(function() {
+			_this.pos = {};
+			init();
+		})();
+		function init() {
+			_this.pos.x = Math.random() * width;
+			_this.pos.y = height + Math.random() * 100;
+			_this.alpha = 0.1 + Math.random() * 0.3;//气泡透明度
+			_this.alpha_change = 0.0002 + Math.random() * 0.0005;//气泡透明度变化速度
+			_this.scale = 0.2 + Math.random() * 0.5;//气泡大小
+			_this.scale_change = Math.random() * 0.002;//气泡大小变化速度
+			_this.speed = 0.1 + Math.random() * 0.4;//气泡上升速度
+		}
+		//气泡
+		this.draw = function() {
+			if (_this.alpha <= 0) {
+				init();
+			}
+			_this.pos.y -= _this.speed;
+			_this.alpha -= _this.alpha_change;
+			_this.scale += _this.scale_change;
+			ctx.beginPath();
+			ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+			ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+			ctx.fill();
+		}; 
+	}
+})();*/
