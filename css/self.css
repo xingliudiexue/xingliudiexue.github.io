@@ -25,6 +25,7 @@ img {
 	background-position-y: 200px;
 	transition: all 0.2s ease-in-out 0s;
 }
+
 /*评论输入框*/
 .vwrap {
 	background-color: rgba(243, 250, 248, 0.438);
@@ -34,6 +35,7 @@ img {
 	box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
 	transition: all .3s
 }
+
 .vwrap:hover {
 	box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
 }
@@ -65,6 +67,7 @@ img {
 .vcol.vcol-30 {
 	visibility: hidden;
 }
+
 /*隐藏valine按钮*/
 .vpower.txt-right {
 	visibility: hidden;
@@ -104,3 +107,44 @@ img {
 	background-color: #49b1f5;
 }
 
+/*mac代码块美化白色样式*/
+#article-container figure.highlight,
+#article-container pre {
+	color: #a9a9a9;
+	background: #f3f3f3
+}
+
+#article-container figure.highlight .highlight-tools {
+	color: #a9a9a9;
+	background: #eee
+}
+
+#article-container figure.highlight .gutter pre {
+	color: #999;
+	background: #f3f3f3
+}
+
+#article-container figure.highlight figcaption a {
+	color: #f3f3f3 !important
+}
+/*mac代码块美化黑色样式
+#article-container figure.highlight,
+#article-container pre {
+	color: #f8f8f2;
+	background: #696969
+}
+
+#article-container figure.highlight .highlight-tools {
+	background: #3f3f3f;
+	color: #fff
+}
+
+#article-container figure.highlight .gutter pre {
+	color: #d3d3d3;
+	background: grey
+}
+
+#article-container figure.highlight figcaption a {
+	color: #a9a9a9 !important
+}
+*/
