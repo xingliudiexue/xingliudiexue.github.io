@@ -298,7 +298,7 @@ if (document.getElementById("clickCanvas")) {
 
 /* 泡泡效果*/
 /*<canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>  header_canvas  page-header*/
-! function () {
+(function () {
     var canvas, ctx, width, height, bubbles, animateHeader = true;
     initHeader();
 
@@ -375,7 +375,7 @@ if (document.getElementById("clickCanvas")) {
             ctx.fill();
         };
     }
-}();
+})();
 /*去掉banner
 var full_page = document.getElementsByClassName("full_page");
 if (full_page.length != 0) {
