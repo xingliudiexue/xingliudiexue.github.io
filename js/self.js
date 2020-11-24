@@ -294,84 +294,168 @@ if (document.getElementById("clickCanvas")) {
                     clickparticle.spawn(e.clientX, e.clientY);
             }();
     });
-}*/
+}
 
 /* 泡泡效果*/
-/*
-(function() {
-	var canvas, ctx, width, height, bubbles, animateHeader = true;
-	initHeader();
-	function initHeader() {
-		canvas = document.getElementById('header_canvas');
-		window_resize();
-		ctx = canvas.getContext('2d');
-		//建立泡泡
-		bubbles = [];
-		var num = width * 0.04;//气泡数量
-		for (var i = 0; i < num; i++) {
-			var c = new Bubble();
-			bubbles.push(c);
-		}
-		animate();
-	}
-	function animate() {
-		if (animateHeader) {
-			ctx.clearRect(0, 0, width, height);
-			for (var i in bubbles) {
-				bubbles[i].draw();
-			}
-		}
-		requestAnimationFrame(animate);
-	}
-	function window_resize() {
-		//canvas铺满窗口
-		//width = window.innerWidth;
-		//height = window.innerHeight;
+/*<canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>  header_canvas  page-header*/
+! function () {
+    var canvas, ctx, width, height, bubbles, animateHeader = true;
+    initHeader();
+
+    function initHeader() {
+        canvas = document.getElementById('header_canvas');
+        window_resize();
+        ctx = canvas.getContext('2d');
+        //建立泡泡
+        bubbles = [];
+        var num = width * 0.04; //气泡数量
+        for (var i = 0; i < num; i++) {
+            var c = new Bubble();
+            bubbles.push(c);
+        }
+        animate();
+    }
+
+    function animate() {
+        if (animateHeader) {
+            ctx.clearRect(0, 0, width, height);
+            for (var i in bubbles) {
+                bubbles[i].draw();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    function window_resize() {
+        //canvas铺满窗口
+        width = window.innerWidth;
+        height = window.innerHeight;
+        
 
         //如果需要铺满内容可以换下面这个
-        var panel = document.getElementById('thumbnail_canvas');
-		width=panel.offsetWidth;
-		height=panel.offsetHeight;
+        //var panel = document.getElementById('thumbnail_canvas');
+        //width=panel.offsetWidth;
+        //height=panel.offsetHeight;
 
-		canvas.width = width;
-		canvas.height = height;
-	}
-    window.onresize = function(){
+
+        canvas.width = width;
+        canvas.height = height;
+    }
+    window.onresize = function () {
         window_resize();
     }
-	function Bubble() {
-		var _this = this;
-		(function() {
-			_this.pos = {};
-			init();
-		})();
-		function init() {
-			_this.pos.x = Math.random() * width;
-			_this.pos.y = height + Math.random() * 100;
-			_this.alpha = 0.1 + Math.random() * 0.3;//气泡透明度
-			_this.alpha_change = 0.0002 + Math.random() * 0.0005;//气泡透明度变化速度
-			_this.scale = 0.2 + Math.random() * 0.5;//气泡大小
-			_this.scale_change = Math.random() * 0.002;//气泡大小变化速度
-			_this.speed = 0.1 + Math.random() * 0.4;//气泡上升速度
-		}
-		//气泡
-		this.draw = function() {
-			if (_this.alpha <= 0) {
-				init();
-			}
-			_this.pos.y -= _this.speed;
-			_this.alpha -= _this.alpha_change;
-			_this.scale += _this.scale_change;
-			ctx.beginPath();
-			ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
-			ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
-			ctx.fill();
-		}; 
-	}
-})();*/
 
+    function Bubble() {
+        var _this = this;
+        (function () {
+            _this.pos = {};
+            init();
+        })();
 
+        function init() {
+            _this.pos.x = Math.random() * width;
+            _this.pos.y = height + Math.random() * 100;
+            _this.alpha = 0.1 + Math.random() * 0.5; //气泡透明度
+            _this.alpha_change = 0.0002 + Math.random() * 0.0001; //气泡透明度变化速度
+            _this.scale = 0.2 + Math.random() * 0.5; //气泡大小
+            _this.scale_change = Math.random() * 0.002; //气泡大小变化速度
+            _this.speed = 0.1 + Math.random() * 1; //气泡上升速度
+        }
+        //气泡
+        this.draw = function () {
+            if (_this.alpha <= 0) {
+                init();
+            }
+            _this.pos.y -= _this.speed;
+            _this.alpha -= _this.alpha_change;
+            _this.scale += _this.scale_change;
+            ctx.beginPath();
+            ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+            ctx.fill();
+        };
+    }
+}();
+/*去掉banner
+var full_page = document.getElementsByClassName("full_page");
+if (full_page.length != 0) {
+  full_page[0].style.background = "transparent";
+}*/
+/*
+document.getElementsById(
+    "header_canvas"
+    ).disabled = 
+    true
+    ;
+*/
+/**
+ * Minified by jsDelivr using Terser v5.3.5.
+ * Original file: /gh/sunchaser-lilu/sunchaser-cdn@master/js/circleMagic.js
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ 
+! function (e) {
+    e.fn.circleMagic = function (t) {
+        let o, n, a, r, i, l, d = !0,
+            c = [],
+            h = e.extend({
+                elem: ".header",
+                color: "rgba(255,255,255,.4)",
+                radius: 20,
+                densety: .3,
+                clearOffset: .2
+            }, t);
 
+        function s() {
+            d = !(document.body.scrollTop > n)
+        }
+
+        function f() {
+            o = window.innerWidth, n = window.innerHeight, a.style.height = n + "px", r.width = o, r.height = n
+        }
+
+        function u() {
+            if (d) {
+                i.clearRect(0, 0, o, n);
+                for (let e in c) c[e].draw()
+            }
+            requestAnimationFrame(u)
+        }
+
+        function m() {
+            let e = this;
+
+            function t() {
+                e.pos.x = Math.random() * o, e.pos.y = n + 100 * Math.random(), e.alpha = .1 + Math.random() * h.clearOffset, e.scale = .1 + .3 * Math.random(), e.speed = Math.random(), "random" === h.color ? e.color = `rgba(${Math.floor(255*Math.random())}, ${Math.floor(255*Math.random())}, ${Math.floor(255*Math.random())}, ${Math.random().toPrecision(2)})` : e.color = h.color
+            }
+            e.pos = {}, t(), this.draw = function () {
+                e.alpha <= 0 && t(), e.pos.y -= e.speed, e.alpha -= 5e-4, i.beginPath(), i.arc(e.pos.x, e.pos.y, e.scale * h.radius, 0, 2 * Math.PI, !1), i.fillStyle = e.color, i.fill(), i.closePath()
+            }
+        }! function () {
+            o = e(window).width(), n = e(window).height(), l = {
+                    x: 0,
+                    y: n
+                }, a = document.querySelector(h.elem), a.style.height = n + "px",
+                function () {
+                    let e = document.createElement("canvas");
+                    e.id = "canvas", a.append(e)
+                }(), r = document.getElementById("canvas"), r.width = o, r.height = n, i = r.getContext("2d");
+            for (let e = 0; e < o * h.densety; e++) {
+                let e = new m;
+                c.push(e)
+            }
+            u()
+        }(), window.addEventListener("scroll", s), window.addEventListener("resize", f)
+    }
+}(jQuery), $(".full_page").circleMagic({
+    elem: ".full_page",
+    radius: 18,
+    densety: .1,
+    color: "rgba(116,77,169,.7)",
+    clearOffset: .3
+});
+//# sourceMappingURL=/sm/0eb880b13e49cb95a1d2ffff3c73286879b9150a8c10005514e630691ddf8bec.map
+*/
 // 添加图片，背景图片会在这里随机选取一个设置为banner
 /*xiaokang.bannerList = [
     "/img/custom/beachDowry.webp",
