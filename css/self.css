@@ -209,7 +209,7 @@ img {
 
 /*footer半透明*/
 #footer {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.082);
     color: #000;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -217,7 +217,7 @@ img {
 }
 
 #footer::before {
-    background: rgba(255, 255, 255, 0)
+    background: rgba(255, 255, 255, 0.151)
 }
 
 #footer #footer-wrap {
