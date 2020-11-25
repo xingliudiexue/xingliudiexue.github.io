@@ -207,7 +207,7 @@ img {
 	);
   }
 
-/*footer半透明*/
+/*footer半透明
 #footer {
     background: rgba(255, 255, 255, 0.082);
     color: #000;
@@ -227,3 +227,4 @@ img {
 #footer #footer-wrap a {
     color: var(--font-color);
 }
+*/
