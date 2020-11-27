@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xingliudie.top/vercel/index.html</loc>
+    
+    <lastmod>2020-11-27</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xingliudie.top/20201119-butterfly-custom-modify/</loc>
     
     <lastmod>2020-11-25</lastmod>
@@ -88,7 +95,7 @@
 
   <url>
     <loc>https://xingliudie.top/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,49 +103,49 @@
   
   <url>
     <loc>https://xingliudie.top/tags/hexo/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/yilia/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/github/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/notes/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/medicine/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/note/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/tags/buterfly/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -147,14 +154,14 @@
   
   <url>
     <loc>https://xingliudie.top/categories/English/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xingliudie.top/categories/hexo/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
